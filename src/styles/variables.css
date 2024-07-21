@@ -1,8 +1,8 @@
 .light-theme {
   --white: rgb(255, 255, 255);
   --black: rgb(0, 0, 0);
-  --primary-bg: rgb(240, 240, 240);
-  --secondary-bg: rgb(255, 255, 255);
+  --primary-bg: rgb(255, 255, 255);
+  --secondary-bg: rgb(240, 240, 240);
   --primary-text: rgb(0, 0, 0);
   --secondary-text: rgba(0, 0, 0, 0.7);
   --tertiary-text: rgba(0, 0, 0, 0.5);
@@ -20,5 +20,5 @@
 }
 
 :root {
-  --header-height: 70px;
+  --header-height: 76px;
 }
