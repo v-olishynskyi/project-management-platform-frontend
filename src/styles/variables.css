@@ -1,0 +1,24 @@
+.light-theme {
+  --white: rgb(255, 255, 255);
+  --black: rgb(0, 0, 0);
+  --primary-bg: rgb(240, 240, 240);
+  --secondary-bg: rgb(255, 255, 255);
+  --primary-text: rgb(0, 0, 0);
+  --secondary-text: rgba(0, 0, 0, 0.7);
+  --tertiary-text: rgba(0, 0, 0, 0.5);
+  --border: rgb(0, 0, 0, 0.1);
+}
+
+.dark-theme {
+  --white: rgb(255, 255, 255);
+  --black: rgb(0, 0, 0);
+  --primary-bg: rgb(26, 26, 35);
+  --secondary-bg: rgb(37, 39, 49);
+  --primary-text: rgb(255, 255, 255);
+  --secondary-text: rgba(255, 255, 255, 0.7);
+  --border: rgb(255, 255, 255, 0.1);
+}
+
+:root {
+  --header-height: 70px;
+}
