@@ -1,15 +1,22 @@
+import 'primeicons/primeicons.css';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { Provider } from 'jotai';
+import { PrimeReactProvider } from 'primereact/api';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <App />
+    <PrimeReactProvider>
+      <Provider>
+        <App />
+      </Provider>
+    </PrimeReactProvider>
   </React.StrictMode>
 );
 

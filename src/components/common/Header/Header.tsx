@@ -1,8 +1,34 @@
 import React from 'react';
 import './styles.scss';
+import { useAtom, useAtomValue, useSetAtom } from 'jotai';
+import { isDarkModeAtom, themeAtom } from '@store';
+
+import { IconField } from 'primereact/iconfield';
+import { InputIcon } from 'primereact/inputicon';
+import { InputText } from 'primereact/inputtext';
+import { Input } from '@components';
 
 const Header: React.FC = () => {
-  return <div className='container' />;
+  const setIsDarkMode = useSetAtom(isDarkModeAtom);
+  const isDark = useAtomValue(isDarkModeAtom);
+
+  const toggleTheme = React.useCallback(() => setIsDarkMode(!isDark), [isDark]);
+
+  return (
+    <header className='header-container'>
+      <div className='searchbar-container'>
+        <Input />
+      </div>
+      <div className='theme-toggler' onClick={toggleTheme}>
+        {
+          <i
+            className={`pi ${isDark ? 'pi-sun' : 'pi-moon'}`}
+            style={{ fontSize: '2rem', color: isDark ? 'yellow' : 'cyan' }}
+          />
+        }
+      </div>
+    </header>
+  );
 };
 
 export default Header;

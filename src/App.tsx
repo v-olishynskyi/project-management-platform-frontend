@@ -3,17 +3,17 @@ import '@styles/variables.css';
 import './App.scss';
 import { RouterProvider } from 'react-router-dom';
 import { useRouter } from '@navigation';
+import { useAtomValue } from 'jotai';
+import { themeAtom } from '@store';
 
 function App() {
-  const theme = 'light';
+  const theme = useAtomValue(themeAtom);
 
   const router = useRouter();
 
   return (
     <div className={`${theme}-theme app`}>
-      <React.StrictMode>
-        <RouterProvider router={router} />
-      </React.StrictMode>
+      <RouterProvider router={router} />
     </div>
   );
 }

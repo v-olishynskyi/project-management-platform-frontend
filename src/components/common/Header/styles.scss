@@ -1,7 +1,18 @@
-.container {
+.header-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   height: var(--header-height);
-  width: 100%;
   background-color: var(--primary-bg);
-  // padding: 16px;
   border-bottom: 1px solid var(--border);
+  padding: 16px;
+
+  .searchbar-container {
+    margin: 0 auto;
+  }
+
+  .theme-toggler {
+    cursor: pointer;
+    user-select: none;
+  }
 }
