@@ -2,6 +2,16 @@ import React from 'react';
 import { ProtectedRoute } from './components';
 import { createBrowserRouter } from 'react-router-dom';
 import { AppLayout } from '@components';
+import {
+  Calendar,
+  Documents,
+  Home,
+  Messages,
+  Profile,
+  Projects,
+  Settings,
+  Team,
+} from '@pages';
 
 const useRouter = () => {
   const router = createBrowserRouter([
@@ -17,35 +27,35 @@ const useRouter = () => {
       children: [
         {
           path: '/profile',
-          element: <div>profile</div>,
+          element: <Profile />,
         },
         {
           path: '/home',
-          element: <div>home</div>,
+          element: <Home />,
         },
         {
           path: '/projects',
-          element: <div>projects</div>,
+          element: <Projects />,
         },
         {
           path: '/team',
-          element: <div>team</div>,
+          element: <Team />,
         },
         {
           path: '/calendar',
-          element: <div>calendar</div>,
+          element: <Calendar />,
         },
         {
           path: '/documents',
-          element: <div>documentation</div>,
+          element: <Documents />,
         },
         {
           path: '/settings',
-          element: <div>settings</div>,
+          element: <Settings />,
         },
         {
           path: '/messages',
-          element: <div>messages</div>,
+          element: <Messages />,
         },
       ],
     },
