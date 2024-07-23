@@ -5,18 +5,15 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'jotai';
-import { PrimeReactProvider } from 'primereact/api';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <PrimeReactProvider>
-      <Provider>
-        <App />
-      </Provider>
-    </PrimeReactProvider>
+    <Provider>
+      <App />
+    </Provider>
   </React.StrictMode>
 );
 

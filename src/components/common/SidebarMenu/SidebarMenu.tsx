@@ -1,20 +1,18 @@
 import React from 'react';
 import './styles.scss';
-import { Avatar } from 'primereact/avatar';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 const menuItems: Array<{ iconComponent: React.ReactNode; route: string }> = [
   {
-    iconComponent: (
-      <Avatar
-        image={
-          'https://www.gravatar.com/avatar/05dfd4b41340d09cae045235eb0893c3?d=mp'
-        }
-        className='flex align-items-center justify-content-center mr-2'
-        size='xlarge'
-        shape='circle'
-      />
-    ),
+    iconComponent: null,
+    // <Avatar
+    //   image={
+    //     'https://www.gravatar.com/avatar/05dfd4b41340d09cae045235eb0893c3?d=mp'
+    //   }
+    //   className='flex align-items-center justify-content-center mr-2'
+    //   size='xlarge'
+    //   shape='circle'
+    // />
     route: '/profile',
   },
   {

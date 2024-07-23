@@ -1,11 +1,7 @@
 import React from 'react';
 import './styles.scss';
-import { useAtom, useAtomValue, useSetAtom } from 'jotai';
-import { isDarkModeAtom, themeAtom } from '@store';
-
-import { IconField } from 'primereact/iconfield';
-import { InputIcon } from 'primereact/inputicon';
-import { InputText } from 'primereact/inputtext';
+import { useAtomValue, useSetAtom } from 'jotai';
+import { isDarkModeAtom } from '@store';
 import { Input } from '@components';
 
 const Header: React.FC = () => {

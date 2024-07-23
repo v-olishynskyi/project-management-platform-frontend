@@ -1,9 +1,8 @@
 import React from 'react';
 import { FormState } from './types';
 import './styles.scss';
-import { Input, Typography } from '@components';
+import { Input, Typography, Button } from '@components';
 import { SubmitHandler, useForm } from 'react-hook-form';
-import { Button } from 'primereact/button';
 
 const Login: React.FC = () => {
   const {
