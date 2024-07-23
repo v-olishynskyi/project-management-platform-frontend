@@ -45,6 +45,10 @@ const menuItems: Array<{ iconComponent: React.ReactNode; route: string }> = [
     iconComponent: <i className='pi pi-comments menu-icon' />,
     route: '/messages',
   },
+  {
+    iconComponent: <i className='pi pi-code menu-icon' />,
+    route: '/components',
+  },
 ];
 
 const SidebarMenu: React.FC = () => {

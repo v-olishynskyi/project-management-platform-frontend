@@ -1,0 +1,27 @@
+.button {
+  text-align: center;
+  background: linear-gradient(#423df5, #5d5af6);
+  border: none;
+  color: var(--primary-text) &_small {
+    padding: 6px 12px;
+    font-size: 10px;
+    line-height: 15px;
+    font-weight: 500;
+  }
+
+  &_medium {
+    padding: 6px 12px;
+    font-size: 10px;
+    line-height: 15px;
+    font-weight: 500;
+    border-radius: 6.2px;
+  }
+
+  &_large {
+    padding: 10px 20px;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 500;
+    border-radius: 10px;
+  }
+}

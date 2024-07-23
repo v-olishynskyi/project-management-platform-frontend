@@ -8,6 +8,7 @@
   --secondary-text: rgba(0, 0, 0, 0.7);
   --tertiary-text: rgba(0, 0, 0, 0.5);
   --border: rgb(0, 0, 0, 0.1);
+  --error: rgb(255, 112, 112);
 }
 
 .dark-theme {
@@ -19,6 +20,7 @@
   --primary-text: rgb(255, 255, 255);
   --secondary-text: rgba(255, 255, 255, 0.7);
   --border: rgb(255, 255, 255, 0.1);
+  --error: rgb(255, 112, 112);
 }
 
 :root {

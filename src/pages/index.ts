@@ -7,3 +7,4 @@ export * from './profile';
 export * from './projects';
 export * from './settings';
 export * from './team';
+export * from './_dev';

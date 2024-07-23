@@ -1,4 +1,4 @@
-
-export type LoginProps = {
-  
-}
+export type FormState = {
+  email: string;
+  password: string;
+};
