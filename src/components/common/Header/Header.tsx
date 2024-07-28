@@ -1,25 +1,24 @@
 import React from 'react';
 import './styles.scss';
-import { useAtomValue, useSetAtom } from 'jotai';
-import { isDarkModeAtom } from '@store';
-import { Input } from '@components';
+import { storeActions, useStore } from '@store';
 
 const Header: React.FC = () => {
-  const setIsDarkMode = useSetAtom(isDarkModeAtom);
-  const isDark = useAtomValue(isDarkModeAtom);
+  const setIsDarkMode = storeActions.app.isDark;
+  const isDarkMode = useStore().app.isDark();
 
-  const toggleTheme = React.useCallback(() => setIsDarkMode(!isDark), [isDark]);
+  const toggleTheme = React.useCallback(
+    () => setIsDarkMode(!isDarkMode),
+    [isDarkMode, setIsDarkMode]
+  );
 
   return (
     <header className='header-container'>
-      <div className='searchbar-container'>
-        <Input />
-      </div>
+      <div className='searchbar-container'></div>
       <div className='theme-toggler' onClick={toggleTheme}>
         {
           <i
-            className={`pi ${isDark ? 'pi-sun' : 'pi-moon'}`}
-            style={{ fontSize: '2rem', color: isDark ? 'yellow' : 'cyan' }}
+            className={`pi ${isDarkMode ? 'pi-sun' : 'pi-moon'}`}
+            style={{ fontSize: '2rem', color: isDarkMode ? 'yellow' : 'cyan' }}
           />
         }
       </div>

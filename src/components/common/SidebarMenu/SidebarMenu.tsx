@@ -1,51 +1,101 @@
 import React from 'react';
-import './styles.scss';
+import s from './styles.module.scss';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { Avatar } from '@mui/material';
+import {} from '@api';
 
-const menuItems: Array<{ iconComponent: React.ReactNode; route: string }> = [
+import DashboardOutlinedIcon from '@mui/icons-material/DashboardOutlined';
+import DashboardIcon from '@mui/icons-material/Dashboard';
+import FolderIcon from '@mui/icons-material/Folder';
+import FolderOutlined from '@mui/icons-material/FolderOutlined';
+import PeopleIcon from '@mui/icons-material/People';
+import PeopleAltOutlinedIcon from '@mui/icons-material/PeopleAltOutlined';
+import CalendarMonthOutlinedIcon from '@mui/icons-material/CalendarMonthOutlined';
+import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
+import ArticleIcon from '@mui/icons-material/Article';
+import ArticleOutlinedIcon from '@mui/icons-material/ArticleOutlined';
+import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
+import SettingsIcon from '@mui/icons-material/Settings';
+import ChatOutlinedIcon from '@mui/icons-material/ChatOutlined';
+import ChatIcon from '@mui/icons-material/Chat';
+import LogoutIcon from '@mui/icons-material/Logout';
+
+const menuItems: Array<{
+  iconComponent: {
+    default: React.ReactNode;
+    active: React.ReactNode;
+  };
+  route: string;
+}> = [
   {
-    iconComponent: null,
-    // <Avatar
-    //   image={
-    //     'https://www.gravatar.com/avatar/05dfd4b41340d09cae045235eb0893c3?d=mp'
-    //   }
-    //   className='flex align-items-center justify-content-center mr-2'
-    //   size='xlarge'
-    //   shape='circle'
-    // />
+    iconComponent: {
+      default: (
+        <Avatar
+          src={
+            'https://www.gravatar.com/avatar/05dfd4b41340d09cae045235eb0893c3?d=mp'
+          }
+          variant='circular'
+        />
+      ),
+      active: (
+        <Avatar
+          src={
+            'https://www.gravatar.com/avatar/05dfd4b41340d09cae045235eb0893c3?d=mp'
+          }
+          variant='circular'
+        />
+      ),
+    },
     route: '/profile',
   },
   {
-    iconComponent: <i className='pi pi-home menu-icon' />,
-    route: '/home',
+    iconComponent: {
+      active: <DashboardIcon sx={{ fontSize: 32 }} />,
+      default: <DashboardOutlinedIcon sx={{ fontSize: 32 }} />,
+    },
+    route: '/dashboard',
   },
   {
-    iconComponent: <i className='pi pi-folder menu-icon' />,
+    iconComponent: {
+      active: <FolderIcon sx={{ fontSize: 32 }} />,
+      default: <FolderOutlined sx={{ fontSize: 32 }} />,
+    },
     route: '/projects',
   },
   {
-    iconComponent: <i className='pi pi-users menu-icon' />,
+    iconComponent: {
+      active: <PeopleIcon sx={{ fontSize: 32 }} />,
+      default: <PeopleAltOutlinedIcon sx={{ fontSize: 32 }} />,
+    },
     route: '/team',
   },
   {
-    iconComponent: <i className='pi pi-calendar menu-icon' />,
+    iconComponent: {
+      active: <CalendarMonthIcon sx={{ fontSize: 32 }} />,
+      default: <CalendarMonthOutlinedIcon sx={{ fontSize: 32 }} />,
+    },
     route: '/calendar',
   },
   {
-    iconComponent: <i className='pi pi-file menu-icon' />,
+    iconComponent: {
+      active: <ArticleIcon sx={{ fontSize: 32 }} />,
+      default: <ArticleOutlinedIcon sx={{ fontSize: 32 }} />,
+    },
     route: '/documents',
   },
   {
-    iconComponent: <i className='pi pi-cog menu-icon' />,
-    route: '/settings',
-  },
-  {
-    iconComponent: <i className='pi pi-comments menu-icon' />,
+    iconComponent: {
+      active: <ChatIcon sx={{ fontSize: 32 }} />,
+      default: <ChatOutlinedIcon sx={{ fontSize: 32 }} />,
+    },
     route: '/messages',
   },
   {
-    iconComponent: <i className='pi pi-code menu-icon' />,
-    route: '/components',
+    iconComponent: {
+      active: <SettingsIcon sx={{ fontSize: 32 }} />,
+      default: <SettingsOutlinedIcon sx={{ fontSize: 32 }} />,
+    },
+    route: '/settings',
   },
 ];
 
@@ -53,21 +103,29 @@ const SidebarMenu: React.FC = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
+  const {} = useLogout();
+
   return (
-    <div className='sidebar-menu-container'>
+    <aside className={s.sidebar_menu_container}>
       {menuItems.map(menuItem => {
         const isActive = location.pathname.includes(menuItem.route);
 
         return (
           <div
             key={menuItem.route}
-            className={`menu-item ${isActive ? 'menu-item__active' : ''}`}
+            className={`${s.menu_item} ${isActive ? s.menu_item__active : ''}`}
             onClick={() => navigate({ pathname: menuItem.route })}>
-            {menuItem.iconComponent}
+            {isActive
+              ? menuItem.iconComponent.active
+              : menuItem.iconComponent.default}
           </div>
         );
       })}
-    </div>
+
+      <div className={s.menu_item} onClick={() => {}}>
+        <LogoutIcon sx={{ fontSize: 32 }} />
+      </div>
+    </aside>
   );
 };
 export default SidebarMenu;

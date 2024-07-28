@@ -1,4 +1,5 @@
 {
+  "include": ["src"],
   "compilerOptions": {
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
@@ -21,21 +22,19 @@
       "@assets/*": ["./assets/*"],
       "@components": ["./components"],
       "@components/*": ["./components/*"],
-      "@utils/*": ["./utils/*"],
+      "@utils": ["./utils"],
       "@hooks": ["./hooks"],
       "@theme": ["./styles/theme"],
       "@styles/*": ["./styles/*"],
       "@styles": ["./styles"],
       "@pages": ["./pages"],
       "@pages/*": ["./pages/*"],
-      "@mock": ["./mock"],
+      "@mock/*": ["./mock/*"],
       "@store": ["./store"],
       "@context": ["./context"],
       "@navigation": ["./navigation"],
-      "@services": ["./services"],
       "@assets": ["./assets"],
       "@types": ["./types"]
-    },
-    "include": ["src"]
+    }
   }
 }

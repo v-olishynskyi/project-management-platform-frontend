@@ -1,7 +1,7 @@
 import React from 'react';
-import { createBrowserRouter } from 'react-router-dom';
+import { Navigate, createBrowserRouter, redirect } from 'react-router-dom';
 import { ProtectedRoute } from './components';
-import { AppLayout } from '@components';
+import { AuthorizedLayout } from '@components';
 import {
   Calendar,
   Components,
@@ -16,15 +16,13 @@ import {
   Team,
 } from '@pages';
 
-export const router = createBrowserRouter([
+export const authorizedRouter = createBrowserRouter([
   { path: '/components', element: <Components /> },
-  { path: '/login', element: <Login /> },
-  { path: '/registration', element: <Registration /> },
   {
     path: '/',
     element: (
       <ProtectedRoute>
-        <AppLayout />
+        <AuthorizedLayout />
       </ProtectedRoute>
     ),
     children: [
@@ -62,4 +60,9 @@ export const router = createBrowserRouter([
       },
     ],
   },
+]);
+
+export const unauthorizedRouter = createBrowserRouter([
+  { path: '/login', element: <Login /> },
+  { path: '/registration', element: <Registration /> },
 ]);

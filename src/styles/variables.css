@@ -14,12 +14,12 @@
 .dark-theme {
   --white: rgb(255, 255, 255);
   --black: rgb(0, 0, 0);
-  --primary-bg: rgb(26, 26, 35);
-  --secondary-bg: rgb(37, 39, 49);
+  --primary-bg: #1a1a23;
+  --secondary-bg: #252731;
   --hover-bg: rgb(30, 30, 40);
   --primary-text: rgb(255, 255, 255);
-  --secondary-text: rgba(255, 255, 255, 0.7);
-  --border: rgb(255, 255, 255, 0.1);
+  --secondary-text: #ffffffb3;
+  --border: #ffffff1a;
   --error: rgb(255, 112, 112);
 }
 

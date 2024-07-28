@@ -1,14 +1,14 @@
+import { useTrackedStore } from '@store';
 import React from 'react';
 import { Navigate, useLocation } from 'react-router-dom';
 
-export const ProtectedRoute: React.FC<React.PropsWithChildren> = ({
-  children,
-}) => {
+export const ProtectedRoute = ({ children }: { children: any }) => {
   const location = useLocation();
 
-  const isAuth = true;
+  const isAuth = useTrackedStore().auth.isAuth();
 
-  if (!isAuth) <Navigate to='/login' state={{ from: location.pathname }} />;
+  if (!isAuth)
+    return <Navigate to='/login' state={{ from: location.pathname }} />;
 
   return children;
 };
