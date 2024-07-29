@@ -1,4 +1,4 @@
-import { storeActions, useStore } from '@store';
+import { storeActions } from '@store';
 import { MutationKey, useMutation } from '@tanstack/react-query';
 import { BaseApiResponse } from '@types';
 import { notify } from '@utils';
@@ -18,7 +18,6 @@ export const useLogin = () => {
     mutationKey,
     mutationFn: AuthService.login,
     onSuccess: ({ message }) => {
-      notify.success(message);
       setIsAuth(true);
     },
     onError: ({ message }) => {

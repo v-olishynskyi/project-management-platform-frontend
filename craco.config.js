@@ -16,7 +16,6 @@ module.exports = {
       '@context': path.resolve(__dirname, 'src/context'),
       '@navigation': path.resolve(__dirname, 'src/navigation'),
       '@types': path.resolve(__dirname, 'src/types'),
-      '@api': path.resolve(__dirname, 'src/api'),
     },
   },
 };

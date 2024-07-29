@@ -1,8 +1,7 @@
 import React from 'react';
 import '@styles/variables.css';
 import './App.scss';
-import { BrowserRouter, RouterProvider } from 'react-router-dom';
-import { RootRouter, useRouter } from '@navigation';
+import { RootRouter } from '@navigation';
 import { storeGetter } from '@store';
 import { CssBaseline, ThemeProvider } from '@mui/material';
 import { useMuiTheme } from '@hooks';

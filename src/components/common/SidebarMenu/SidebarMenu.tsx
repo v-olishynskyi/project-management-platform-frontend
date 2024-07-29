@@ -1,8 +1,8 @@
 import React from 'react';
 import s from './styles.module.scss';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { Avatar } from '@mui/material';
-import {} from '@api';
+import { Avatar, CircularProgress } from '@mui/material';
+import { useLogout } from 'api/hooks/auth';
 
 import DashboardOutlinedIcon from '@mui/icons-material/DashboardOutlined';
 import DashboardIcon from '@mui/icons-material/Dashboard';
@@ -103,7 +103,12 @@ const SidebarMenu: React.FC = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
-  const {} = useLogout();
+  const { isPending: isLogouting, mutateAsync: logoutMutation } = useLogout();
+
+  const logout = async () => {
+    await logoutMutation();
+    navigate('/login');
+  };
 
   return (
     <aside className={s.sidebar_menu_container}>
@@ -122,8 +127,12 @@ const SidebarMenu: React.FC = () => {
         );
       })}
 
-      <div className={s.menu_item} onClick={() => {}}>
-        <LogoutIcon sx={{ fontSize: 32 }} />
+      <div className={s.menu_item} onClick={logout}>
+        {isLogouting ? (
+          <CircularProgress size={32} />
+        ) : (
+          <LogoutIcon sx={{ fontSize: 32 }} />
+        )}
       </div>
     </aside>
   );

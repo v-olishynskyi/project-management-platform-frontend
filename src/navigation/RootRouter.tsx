@@ -17,7 +17,7 @@ import {
   Settings,
   Team,
 } from '@pages';
-import { ProtectedRoute } from './components';
+import { ProtectedRoute, Spinner } from './components';
 import { useTrackedStore } from '@store';
 
 export const RootRouter = () => {
@@ -25,6 +25,7 @@ export const RootRouter = () => {
 
   const router = createBrowserRouter([
     {
+      HydrateFallback: Spinner,
       path: '/',
       element: <AuthorizedLayout />,
       children: [
@@ -96,6 +97,7 @@ export const RootRouter = () => {
     },
     {
       Component: UnauthorizedLayout,
+      HydrateFallback: Spinner,
       loader: () => {
         if (isAuth) return redirect('/dashboard');
         return null;
